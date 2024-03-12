@@ -1,0 +1,52 @@
+@mixin navbar {
+  display: flex;
+  font-size: $font-size;
+  align-items: center;
+  margin-left: -10px;
+}
+
+.navbar {
+  margin-bottom: 134px;
+
+  &__list {
+    @include navbar;
+    column-gap: 23px;
+
+
+    @media (max-width: 1024px) {
+      @include navbar;
+      column-gap: 47px;
+      justify-content: center;
+    }
+
+    @media screen and (max-width: 820px) {
+      @include navbar;
+      column-gap: 23px;
+      justify-content: center;
+    }
+
+    @media screen and (max-width: 768px) {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__link {
+    color: $color-black;
+    padding: 10px;
+    display: block;
+    transition: scale 0.1s;
+    letter-spacing: $letter-spacing;
+
+    &--color {
+      color: $color-primary;
+    }
+
+    &:hover {
+      color: $color-black;
+    }
+  }
+
+
+}
